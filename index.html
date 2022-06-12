@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="author" content="2022-06-12">
+<title>React Parcel Quickstart Tutorial</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<link rel="stylesheet" href="./asciidoctor.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>React Parcel Quickstart Tutorial</h1>
+<div class="details">
+<span id="author" class="author">2022-06-12</span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">React Parcel Quickstart Tutorial</div>
+<ul class="sectlevel1">
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#steps">Steps</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="introduction">Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a simple tutorial that produces the project
+<a href="https://github.com/paulojeronimo/react-parcel-quickstart" class="bare">https://github.com/paulojeronimo/react-parcel-quickstart</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="steps">Steps</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>$ mkdir react-parcel-quickstart &amp;&amp; cd $_
+$ npm init -y
+$ npm i -D parcel
+$ npm i react react-dom</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ mkdir src &amp;&amp; cat &gt; src/index.html &lt;&lt;'EOF'
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;My Parcel App&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="app"&gt;&lt;/div&gt;
+    &lt;script type="module" src="index.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+EOF</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ cat &gt; src/index.js &lt;&lt;'EOF'
+import ReactDOM from "react-dom";
+import { App } from "./App";
+
+const app = document.getElementById("app");
+ReactDOM.render(&lt;App /&gt;, app);
+EOF</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ cat &gt; src/App.js &lt;&lt;'EOF'
+export function App() {
+  return &lt;h1&gt;Hello world!&lt;/h1&gt;;
+}
+EOF</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ npx parcel src/index.html</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Open <a href="http://localhost:1234/" class="bare">http://localhost:1234/</a></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ cat &gt; LICENSE &lt;&lt;'EOF'
+MIT License
+
+Copyright (c) 2022 Paulo Jerônimo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+EOF</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ cat &gt; README.adoc &lt;&lt;'EOF'
+= React Parcel Quickstart
+
+This is a quickstart project that you can use to create React + Parcel
+projects.
+It was created by following the steps in the tutorial
+https://paulojeronimo.com/react-parcel-quickstart-tutorial
+
+== How to use it?
+
+This will extract this project to the directory `my-new-project`
+project:
+
+....
+$ mkdir my-new-project &amp;&amp; \
+curl -L https://github.com/paulojeronimo/react-parcel-quickstart/archive/refs/heads/main.tar.gz | \
+tar xz --strip-components=1 -C my-new-project
+....
+
+After that, you can update the name of the project in `package.json`
+with the following command:
+
+....
+npx change-package-name my-new-project
+....
+
+== Installation
+
+....
+$ npm install
+....
+
+== Execution
+
+....
+$ npx parcel src/index.html
+....
+
+Open http://localhost:1234.
+EOF</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ cat &gt; .gitignore &lt;&lt;'EOF'
+node_modules
+.parcel-cache
+dist
+EOF</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git init
+$ git add -A
+$ git commit -m 'Initial commit'</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="references">References</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://parceljs.org/recipes/react/" class="bare">https://parceljs.org/recipes/react/</a></p>
+</li>
+<li>
+<p><a href="https://parceljs.org/getting-started/webapp/" class="bare">https://parceljs.org/getting-started/webapp/</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
