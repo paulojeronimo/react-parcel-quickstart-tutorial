@@ -134,16 +134,16 @@ This will extract this project to the directory `my-new-project`
 project:
 
 ....
-$ mkdir my-new-project &amp;&amp; \
+$ mkdir my-new-project &amp;&amp; cd $_ &amp;&amp; \
 curl -L https://github.com/paulojeronimo/react-parcel-quickstart/archive/refs/heads/main.tar.gz | \
-tar xz --strip-components=1 -C my-new-project
+tar xz --strip-components=1
 ....
 
 After that, you can update the name of the project in `package.json`
 with the following command:
 
 ....
-npx change-package-name my-new-project
+$ npx change-package-name my-new-project
 ....
 
 == Installation
