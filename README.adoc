@@ -91,16 +91,36 @@ EOF
 $ cat > README.adoc <<'EOF'
 = React Parcel Quickstart
 
-Created by following the steps in the tutorial
+This is a quickstart project that you can use to create React + Parcel
+projects.
+It was created by following the steps in the tutorial
 https://paulojeronimo.com/react-parcel-quickstart-tutorial
 
-Installation:
+== How to use it?
+
+This will extract this project to the directory `my-new-project`
+project:
+
+....
+$ mkdir my-new-project && cd $_ && \
+curl -L https://github.com/paulojeronimo/react-parcel-quickstart/archive/refs/heads/main.tar.gz | \
+tar xz --strip-components=1
+....
+
+After that, you can update the name of the project in `package.json`
+with the following command:
+
+....
+$ npx change-package-name my-new-project
+....
+
+== Installation
 
 ....
 $ npm install
 ....
 
-Execution:
+== Execution
 
 ....
 $ npx parcel src/index.html
